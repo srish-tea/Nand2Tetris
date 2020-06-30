@@ -1,0 +1,24 @@
+//test script for EQ3 chip
+
+load EQ3.hdl,
+output-file EQ3.out,
+
+set a %B111,
+set b %B111,
+eval,
+output;
+
+set a %B101,
+set b %B100,
+eval,
+output;
+
+set a %B001,
+set b %B001,
+eval,
+output;
+
+set a %B010,
+set b %B011,
+eval,
+output;
