@@ -14,8 +14,14 @@ CHIP Mux {
     OUT out;
 
     PARTS:
-    Not(in=sel, out=nsel);
-    Nand(a=a, b=nsel, out=na);
-    Nand(a=sel, b=b, out=nb);
-    Nand(a=na, b=nb, out=out);
+    Not(in=b, out=nb);
+    Xor(a=a, b=sel, out=sa);
+    Xor(a=sel, b=nb, out=sb);
+    Xor(a=a, b=sa, out=nva);
+    Xor(a=sb, b=b, out=nvb);
+    Not(in=nva, out=va);
+    Not(in=nvb, out=vb);
+    And(a=a, b=va, out=oa);
+    And(a=vb, b=b, out=ob);
+    Xor(a=oa, b=ob, out=out);
 }
