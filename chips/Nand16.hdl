@@ -1,0 +1,14 @@
+/**
+ * 16-bit Nand gate:
+ * out[i] = a[i] Nand b[i]
+ *
+ */
+
+CHIP Nand16 {
+     IN a[16], b[16];
+     OUT out[16];
+
+     PARTS:
+     And16(a[0..15]=a, b[0..15]=b, out[0..15]=and);
+     Not16(in[0..15]=and, out[0..15]=out);
+}
