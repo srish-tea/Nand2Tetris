@@ -1,0 +1,14 @@
+pseudocode for fill.asm
+
+(infinite loop)
+
+check keyboard register
+if (kbd == 0) jump to beginning
+
+addr = screen address
+(loop to fill screen)
+     RAM[addr] = -1
+     addr++
+     if (addr < kbd) jump to fill loop
+
+end
