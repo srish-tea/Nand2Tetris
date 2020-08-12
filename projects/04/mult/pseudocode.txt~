@@ -1,0 +1,12 @@
+pseudocode for mult.asm
+
+m = R0 4
+n = R1 3
+i = 0
+prod = R2
+
+LOOP
+if (i==n) jump to END
+else R2=R2+m
+     i=i+1 
+     jump to LOOP
